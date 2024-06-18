@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fun()">playaudio</button>
+    <script>
+        const url = 'https://ai-powered-text-to-speech1.p.rapidapi.com/synthesize-speech';
+        
+    const fun = async()=>{
+        const options = {
+            method: 'POST',
+            headers: {
+                'x-rapidapi-key': 'de599b0feamsh343b5cc5d9e4ab7p15a996jsn8b5b208d7889',
+                'x-rapidapi-host': 'ai-powered-text-to-speech1.p.rapidapi.com',
+                'Content-Type': 'application/json'
+            },
+            body: {
+                sentence: 'Hello everyone!',
+                language: 'en-US',
+                voice: 'Matthew',
+                engine: 'neural',
+                withSpeechMarks: false
+            }
+        };
+        const res = await fetch(url,options);
+        const data=await res.json();
+       // const data = await res.arrayBuffer();
+        //const audioBlob = new Blob([data], { type: 'audio/mp3' });
+        const audio = new Audio();
+        audio.src = data.fileDownloadUrl;
+        //audio.src = URL.createObjectURL(audioBlob);
+        audio.play();
+    }
+
+    
+    </script>
+</body>
+</html>

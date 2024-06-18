@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom File Upload Button</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="home3.css" />
+    <h1>Audio To Text Converter</h1>
+    <style>
+      .ner-btn{
+        width:190px;
+        height:25px;
+        background-color: #8c60e3 ;
+        border-color: rgb(251, 248, 248);
+        transition-duration: 4s
+        ;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <input type="file" id="file-input" multiple />
+      <label for="file-input" class="labels">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        &nbsp; Choose Files To Upload
+      </label>
+      <div id="num-of-files">No Files Choosen</div>
+      <ul id="files-list"></ul>
+      <div class="options">
+        <div class="options-1">
+          <section id="options-section">
+            <h2>Options</h2>
+            <label for="summaryCheckbox">
+              <input
+                type="checkbox"
+                id="summaryCheckbox"
+                name="summarize"
+                value="1"
+                class="rdBtn"
+
+              />
+              Summarize Text </label
+            ><br />
+            <label for="keywordCheckbox">
+              <input
+                type="checkbox"
+                id="keywordCheckbox"
+                class="rdBtn"
+                name="keywords"
+                value="1"
+
+              />
+              Extract Keywords </label
+            ><br />
+            <label for="languageSelect">
+              Language:
+              <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="bn">Bengali</option>
+                <option value="te">Telugu</option>
+                <option value="mr">Marathi</option>
+                <option value="ta">Tamil</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="gu">Gujarati</option>
+                <option value="pa">Punjabi</option>
+                <option value="ur">Urdu</option>
+                <option value="or">Odia</option>
+                <option value="as">Assamese</option>
+                <option value="sa">Sanskrit</option>
+
+              </select>
+            </label>
+          </section>
+          <!-- </label> -->
+           <br>
+           <button style="width: 190px; height: 25px;" class="ner-btn" id="ner_btn">Named Entity Recognition</button>
+
+        </div>
+        <div class="options-2">
+          <button class="convert-btn" id="convert_btn">Convert</button>
+        </div>
+      </div>
+    </div>
+    <div class="text-area-container">
+      <label for="myTextArea"><h3>Result of Converted:</h3></label>
+      <textarea id="myTextArea" name="myTextArea" rows="4" cols="50"></textarea>
+    </div>
+
+    <!-- Script -->
+    <script src="home3.js"></script>
+  </body>
+</html>

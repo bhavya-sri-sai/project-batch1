@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Text maker</title>
+    
+    <link rel="stylesheet" href="home1.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <img src="./photos/logo1.jpg" class="logo" />
+        <h1 class="logo"><h1>Automatic Note Maker</h1></h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="login.html" class="btn">login</a>
+      </nav>
+      <div class="content">
+        <span class="title">Automatic Text Maker</span>
+        <h1>Text→<span>audio→</span>Text</h1>
+        <p>
+          Enter the world of our automatic text maker—a versatile tool that
+          seamlessly transforms audio into text and text into audio. Harness the
+          power of technology as you effortlessly convert spoken words into
+          written form, unlocking a world of accessibility and convenience.
+        </p>
+        <a href="home2.html" class="btn">Get Started</a>
+      </div>
+    </div>
+    <script>
+      console.log('cookie:', document.cookie);
+
+      if (document.cookie === '') {
+        location.assign('/login.html');
+      }
+      //   console.log(document.cookie != '');
+    </script>
+  </body>
+</html>

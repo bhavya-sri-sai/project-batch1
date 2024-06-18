@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'calibri';
+}
+
+body {
+    background: #000;
+}
+
+#main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 400px;
+}
+
+.form-container {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.login-form,
+.signup-form {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    background: rgb(253, 253, 253);
+}
+
+.login-form::before,
+.signup-form::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(53, 30, 187, 0.24);
+    transform: rotate(45deg);
+    left: -50%;
+    bottom: -5%;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.above {
+    animation: above .8s ease-in-out forwards;
+}
+
+.below {
+    animation: below .8s ease-in-out forwards;
+}
+
+button {
+    position: absolute;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    width: 100%;
+    padding: 0 30px 5px 0;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 50px 0;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #8C52FF;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=checkbox] {
+    margin-right: 5px;
+    cursor: pointer;
+    width: auto;
+}
+
+section label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.856);
+}
+
+.field {
+    position: relative;
+    margin-top: 50px;
+}
+
+.field label {
+    left: 0;
+    bottom: 5px;
+    cursor: text;
+    transition: .3s;
+    position: absolute;
+}
+
+.field input:focus+label,
+.field input:not(:placeholder-shown)+label {
+    bottom: 25px;
+}
+
+.login-btn,
+.signup-btn {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .3s;
+    color: rgb(0, 0, 0);
+    background: #8C52FF;
+    padding: 5px;
+}
+
+.login-btn {
+    margin: 0 0 35px 0;
+}
+
+.signup-btn {
+    margin-top: 20px;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    transform: scale(0.9);
+}
+
+.field .fa {
+    right: 1%;
+    position: absolute;
+}
+
+.signup-form section {
+    margin: 40px 0 10px 0;
+}
+
+.signup-form .field {
+    margin-top: 40px;
+}
+
+.icons span {
+    margin: 0 2px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 25px;
+    padding: 10px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+}
+
+.fa-facebook {
+    background: #3b5998;
+}
+
+.fa-microsoft {
+    background: conic-gradient(from -90deg, #f44336 90deg, #4caf50 90deg 180deg, #2196f3 180deg 270deg, #ffc107 270deg) 50% 50%/100% 150% no-repeat;
+}
+
+.fa-dropbox {
+    background: #3d9ae8;
+}
+
+.fa-linkedin {
+    background: rgb(17, 98, 190);
+}
+
+.fa-github {
+    background: #000;
+}
+
+.icons span:hover {
+    transform: scale(0.9);
+}
+
+.other {
+    margin: 10px 0 30px;
+}
+
+.or {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.or span {
+    background: rgba(0, 0, 0, 0.349);
+    width: 100px;
+    height: 1px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.bottom {
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.signup-form .bottom {
+    justify-content: flex-end;
+}
+
+@keyframes above {
+    0% {
+        transform: translate3d(0, 0, -500px);
+    }
+
+    50% {
+        transform: translate3d(70%, 0, -100px);
+    }
+
+    100% {
+        transform: translate3d(0px, 0, 0px);
+    }
+}
+
+@keyframes below {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-70%, 0, 0px);
+    }
+
+    100% {
+        transform: translate3d(0px, 0, -200px);
+    }
+}

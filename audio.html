@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="audio.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <h1>Text To Audio Converter</h1>
+        </div>
+      </nav>
+      <div class="wrapper">
+        <header>Text To Speech</header>
+        <form action="#">
+          <div class="row">
+            <label>Enter Text</label>
+            <textarea id="text"></textarea>
+          </div>
+          <div class="row">
+            <label>Select Voice</label>
+            <div class="outer">
+              <select></select>
+            </div>
+          </div>
+          <button id="convert_btn">Convert To Speech</button>
+        </form>
+        <div class="recordingsList"></div>
+        <!-- <div class="ch">
+          <audio src="audio_clip.mp3" controls id="myclip"></audio>
+          <audio src="audio_clip.mp3" id="out"></audio>
+          <button id="play">Play</button>
+          <button id="stop">stop</button>
+        </div> -->
+      </div>
+
+      <script src="audio.js"></script>
+      <script src="./lame.all.js"></script>
+      <!-- <script>
+        // MC2EchoFile.mp3
+        const audio = document.createElement('audio');
+        audio.src = './MC2EchoFile.mp3';
+        // audio.controls = true;
+
+        // Create a download button
+        const downloadButton = document.createElement('button');
+        downloadButton.textContent = 'Download Audio';
+
+        // Add an event listener to the download button
+        downloadButton.addEventListener('click', () => {
+          // Fetch the audio file
+          fetch(audio.src)
+            .then((response) => response.blob())
+            .then((blob) => {
+              // Create a temporary URL for the blob
+              const url = URL.createObjectURL(blob);
+
+              // Create a link element
+              const link = document.createElement('a');
+              link.href = url;
+              link.download = 'audio.mp3'; // Specify the file name
+
+              // Append the link to the document body and click it programmatically
+              document.body.appendChild(link);
+              link.click();
+
+              // Clean up by revoking the object URL
+              URL.revokeObjectURL(url);
+            });
+        });
+
+        // Append the audio element and download button to the document body
+        // document.body.appendChild(audio);
+        document.body.appendChild(downloadButton);
+      </script> -->
+    </div>
+  </body>
+</html>
